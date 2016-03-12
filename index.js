@@ -213,5 +213,7 @@ app.post('/', function(req, res) {
     weixin.loop(req, res);
 
 });
-
-app.listen(process.env.PORT || 5000);
+var PORT = parseInt(process.env.LC_APP_PORT || 3000);
+app.listen(PORT,function(){
+    console.log('Node app is running, port:', PORT);
+});
